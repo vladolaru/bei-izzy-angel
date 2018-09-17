@@ -8,7 +8,7 @@
  *
  * @package Izzy
  */
-/* test git eafaeds*/
+/* test*/
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
