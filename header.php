@@ -8,7 +8,6 @@
  *
  * @package Izzy
  */
-/* test fvbfgtfb*/
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
