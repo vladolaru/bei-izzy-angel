@@ -45,6 +45,8 @@ if ( ! function_exists( 'izzy_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'izzy' ),
+			'menu-2' => esc_html__( 'Secondary', 'izzy' ),
+			'menu-3' => esc_html__( 'Footer', 'izzy' ),
 		) );
 
 		/*
@@ -159,59 +161,40 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 //Angel's contribution
-function project_type() {
 
-// Set UI labels for Custom Post Type
-	$labels = array(
-		'name'                => _x( 'Projects', 'Post Type General Name' ),
-		'singular_name'       => _x( 'Project', 'Post Type Singular Name' ),
-		'menu_name'           => __( 'Projects' ),
-		'parent_item_colon'   => __( 'Parent Project' ),
-		'all_items'           => __( 'All Projects' ),
-		'view_item'           => __( 'View Project' ),
-		'add_new_item'        => __( 'Add New Project' ),
-		'add_new'             => __( 'Add New' ),
-		'edit_item'           => __( 'Edit Project', 'izzy' ),
-		'update_item'         => __( 'Update Project', 'Izzy' ),
-		'search_items'        => __( 'Search Project' ),
-		'not_found'           => __( 'Not Found' ),
-		'not_found_in_trash'  => __( 'Not found in Trash' ),
-	);
-
-// Set other options for Custom Post Type
-
-	$args = array(
-		'label'               => __( 'Projects' ),
-		'description'         => __( 'Project news and reviews' ),
-		'labels'              => $labels,
-		// Features this CPT supports in Post Editor
-		'supports'            => array( __('Customer'), __('year'), __('gallery') ),
-		// You can associate this CPT with a taxonomy or custom taxonomy.
-		'taxonomies'          => array( __('Category') ),
-		'hierarchical'        => false,
-		'public'              => true,
-		'show_ui'             => true,
-		'show_in_menu'        => true,
-		'show_in_nav_menus'   => true,
-		'show_in_admin_bar'   => true,
-		'menu_position'       => 5,
-		'can_export'          => true,
-		'has_archive'         => true,
-		'exclude_from_search' => false,
-		'publicly_queryable'  => true,
-		'capability_type'     => 'page',
-	);
-
-	// Registering your Custom Post Type
-	register_post_type( 'Projects', $args );
-
-}
-
-/* Hook into the 'init' action so that the function
-* Containing our post type registration is not
-* unnecessarily executed.
-*/
-
-add_action( 'init', 'project_type', 0 );
+/**
+ * Load the custom post types.
+ */
+require get_template_directory() . '/components/custom-post-types.php';
 
 get_post_type_object('Post');
+
+register_sidebar(array(
+	'name' => 'Footer Widget 1',
+	'id'        => 'footer-1',
+	'description' => 'First footer widget area',
+	'before_widget' => '<div id="footer-widget1">',
+	'after_widget' => '</div>',
+	'before_title' => '<h2>',
+	'after_title' => '</h2>',
+	));
+	
+	register_sidebar(array(
+	'name' => 'Footer Widget 2',
+	'id'        => 'footer-2',
+	'description' => 'Second footer widget area',
+	'before_widget' => '<div id="footer-widget2">',
+	'after_widget' => '</div>',
+	'before_title' => '<h2>',
+	'after_title' => '</h2>',
+	));
+	
+	register_sidebar(array(
+	'name' => 'Footer Widget 3',
+	'id'        => 'footer-3',
+	'description' => 'Third footer widget area',
+	'before_widget' => '<div id="footer-widget3">',
+	'after_widget' => '</div>',
+	'before_title' => '<h2>',
+	'after_title' => '</h2>',
+	));

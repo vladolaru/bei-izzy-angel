@@ -11,24 +11,24 @@
 
 ?>
 
-	</div><!-- #content -->
+	<div id="footer-widgets">
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'izzy' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'izzy' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'izzy' ), 'izzy', '<a href="https://www.facebook.com/ArdeleanuGabrielAngel">Ardeleanu Gabriel-Angel</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+<div id="footer-widget1">
+<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-1') ) : ?>
+<?php endif; ?>
+</div>
+
+<div id="footer-widget2">
+<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-2') ) : ?>
+<?php endif; ?>
+</div>
+
+<div id="footer-widget3">
+<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-3') ) : ?>
+<?php endif; ?>
+</div>
+</div>
+<div style="clear-both"></div>
 
 <?php wp_footer(); ?>
 

@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bde93561-a566-42fc-b5d6-78afd87b5c29" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,12 +14,13 @@
     <session id="531631265">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.87" value="1" />
+          <entry key="project.open.time.90" value="1" />
           <entry key="project.open.time.97" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -62,11 +59,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="187" column="81" selection-start-line="187" selection-start-column="40" selection-end-line="187" selection-end-column="81" />
-              <folding>
-                <element signature="e#6155#6282#0#PHP" />
-              </folding>
+            <state relative-caret-position="211">
+              <caret line="192" column="38" selection-start-line="192" selection-start-column="38" selection-end-line="192" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -114,7 +108,7 @@
   </component>
   <component name="PhpServers">
     <servers>
-      <server host="izzy.local" id="c8578e0a-9ce5-4757-8b28-dfdc6d3d9f9f" name="server" />
+      <server host="izzy.local" id="c8578e0a-9ce5-4757-8b28-dfdc6d3d9f9f" name="server" use_path_mappings="true" />
     </servers>
   </component>
   <component name="PhpWebServerValidation" deployment_server_id="d0ba93a4-8a0a-4459-afc3-31607b5a515a" path_to_validation_script="C:\Users\angel\Local Sites\izzy\app\public\wp-content\themes\izzy" selected_validation_type="LOCAL" web_path_to_validation_script="http://izzy.local" />
@@ -148,7 +142,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -186,24 +180,25 @@
       <workItem from="1537178468938" duration="1604000" />
       <workItem from="1537184272503" duration="378000" />
       <workItem from="1537184848276" duration="4127000" />
-      <workItem from="1537189332941" duration="2147000" />
+      <workItem from="1537189332941" duration="2514000" />
+      <workItem from="1537255006938" duration="1275000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8256000" />
+    <option name="totallyTimeSpent" value="9898000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12632374" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12783661" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.36683416" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.36683416" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -261,11 +256,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="187" column="81" selection-start-line="187" selection-start-column="40" selection-end-line="187" selection-end-column="81" />
-          <folding>
-            <element signature="e#6155#6282#0#PHP" />
-          </folding>
+        <state relative-caret-position="211">
+          <caret line="192" column="38" selection-start-line="192" selection-start-column="38" selection-end-line="192" selection-end-column="38" />
         </state>
       </provider>
     </entry>
