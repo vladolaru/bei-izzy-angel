@@ -9,16 +9,11 @@ get_header();
 require_once get_template_directory() . '/project/class-Gallery.php';
 $gallery = new Gallery(get_field('gallery'));
 ?>
-
+    <?php echo $gallery->generateMySlides(); ?>
 	<div id="primary" class="content-area main-content">
 		<main id="main" class="site-main">
 
-		<?php while ( have_posts() ) :
-            the_post();
-            echo $gallery->generateMySlides();
-            echo $gallery->generateNavigationButtons();
-            echo $gallery->generateDots();
-            ?>
+		<?php while ( have_posts() ) : the_post(); ?>
             <h1><?php the_title( '<h1 class="entry-title">', '</h1>' ); ?></h1>
 
             <div class="customer">

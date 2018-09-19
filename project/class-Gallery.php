@@ -11,7 +11,7 @@ class Gallery {
     }
 
     function getData($index, $dataName) {
-        return $images[$index][$dataName];
+        return $this->images[$index][$dataName];
     }
 
     function generateMySlides() {
@@ -22,14 +22,14 @@ class Gallery {
 
         return 
         "<div class=\"slideshow-container\">
-        " . $divs . "
+        " . $divs . $this->generateNavigationButtons() . "
         </div>";
     }
 
     function generateSlide($index){
         return 
         "<div class=\"mySlides fade\">
-            " . "<div class=\"numbertext\">" . $index + 1 . " out of " . $this->imagesCount . "</div>
+            " . "<div class=\"numbertext\">" . ($index + 1) . " out of " . $this->imagesCount . "</div>
             " . "<img src=\"" . $this->getData ($index, 'url') . "\" style=\"width:100%\">
             " . "<div class=\"text\">" . $this->getData($index, 'caption') . "</div>
         </div>";
@@ -39,17 +39,5 @@ class Gallery {
         return
         "<a class=\"prev\" onclick=\"plusSlides(-1)\">&#10094;</a>
         <a class=\"next\" onclick=\"plusSlides(1)\">&#10095;</a><br>";
-    }
-
-    function generateDots() {
-
-        $spans = '';
-        for($i = 0; $i < $this->imagesCount; $i++){
-            $spans = $spans . "<span class=\"dot\" onclick=\"currentSlide(" . $i + 1 . ")\"></span><br>";
-        }
-
-        return
-        "<div style=\"text-align:center\">
-        " . $spans . "</div>"; 
     }
 }
