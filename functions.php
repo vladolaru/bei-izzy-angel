@@ -126,6 +126,8 @@ function izzy_scripts() {
 
 	wp_enqueue_script( 'izzy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'izzy-slider', get_template_directory_uri() . '/js/slider.js', array(), false, true );
+
 	wp_enqueue_script( 'izzy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -169,32 +171,7 @@ require get_template_directory() . '/components/custom-post-types.php';
 
 get_post_type_object('Post');
 
-register_sidebar(array(
-	'name' => 'Footer Widget 1',
-	'id'        => 'footer-1',
-	'description' => 'First footer widget area',
-	'before_widget' => '<div id="footer-widget1">',
-	'after_widget' => '</div>',
-	'before_title' => '<h2>',
-	'after_title' => '</h2>',
-	));
-	
-	register_sidebar(array(
-	'name' => 'Footer Widget 2',
-	'id'        => 'footer-2',
-	'description' => 'Second footer widget area',
-	'before_widget' => '<div id="footer-widget2">',
-	'after_widget' => '</div>',
-	'before_title' => '<h2>',
-	'after_title' => '</h2>',
-	));
-	
-	register_sidebar(array(
-	'name' => 'Footer Widget 3',
-	'id'        => 'footer-3',
-	'description' => 'Third footer widget area',
-	'before_widget' => '<div id="footer-widget3">',
-	'after_widget' => '</div>',
-	'before_title' => '<h2>',
-	'after_title' => '</h2>',
-	));
+/**
+ * Load the 3 column for the footer.
+ */
+require get_template_directory() . '/components/custom-footer.php';
