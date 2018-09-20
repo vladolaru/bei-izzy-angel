@@ -30,7 +30,7 @@ class Gallery {
         return 
         "<div class=\"mySlides fade\">
             " . "<div class=\"numbertext\">" . ($index + 1) . " out of " . $this->imagesCount . "</div>
-            " . "<img src=\"" . $this->getData ($index, 'url') . "\" style=\"width:100%\">
+            " . "<img src=\"" . $this->getData ($index, 'url') . "\" style=\"width:100%;\">
             " . "<div class=\"text\">" . $this->getData($index, 'caption') . "</div>
         </div>";
     }

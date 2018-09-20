@@ -175,3 +175,16 @@ get_post_type_object('Post');
  * Load the 3 column for the footer.
  */
 require get_template_directory() . '/components/custom-footer.php';
+
+/**
+ * Limit the excerpt length.
+ */
+function limited_excerpt($limit) {
+	$content = get_the_excerpt();
+    return wp_trim_words( $content , $limit );
+}
+
+/**
+ * Load the Theme Options
+ */
+require get_template_directory() . '/theme-options/theme-options-functions.php';
