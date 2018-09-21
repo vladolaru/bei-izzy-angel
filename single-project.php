@@ -24,7 +24,7 @@ $gallery = new Gallery(get_field('gallery'));
 
             <div class="period">
             <?php the_field('begin'); ?>
-            <?php the_field('end'); ?>
+            <?php the_field('end'); echo get_theme_mod('setting_demo'); ?>
             </div>
 
             <?php the_content(); ?>
