@@ -23,7 +23,17 @@
 			<div class="entry-meta">
 				<?php
 				izzy_posted_on();
-				izzy_posted_by();
+				if (is_singular()){
+					if (get_theme_mod('post-show-author-box-on-archives')) {
+						izzy_posted_by();
+                    }
+                } else {
+				if (get_theme_mod('post-show-author-on-archives')) {
+						izzy_posted_by();
+					}
+                }
+
+
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

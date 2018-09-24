@@ -21,16 +21,16 @@ function panel( $wp_customize ) {
 		'panel'    => 'theme-options',
 	) );
 
-	add_checkbox( $wp_customize, 'project', 'Show categories on archives' );
-	add_checkbox( $wp_customize, 'project', 'Show customer on archives' );
-	add_checkbox( $wp_customize, 'project', 'Show year on archives' );
+	add_checkbox( $wp_customize, 'project', __('Show categories on archives') );
+	add_checkbox( $wp_customize, 'project', __('Show customer on archives' ) );
+	add_checkbox( $wp_customize, 'project', __('Show year on archives' ));
 
-	add_checkbox( $wp_customize, 'post', 'Show featured image on archives' );
-	add_checkbox( $wp_customize, 'post', 'Show category on archives' );
-	add_checkbox( $wp_customize, 'post', 'Show date on archives' );
-	add_checkbox( $wp_customize, 'post', 'Show author on archives' );
-	add_checkbox( $wp_customize, 'post', 'Show author box on single' );
-	add_checkbox( $wp_customize, 'post', 'Show featured image on single' );
+	add_checkbox( $wp_customize, 'post', __('Show featured image on archives' ));
+	add_checkbox( $wp_customize, 'post', __('Show categories on archives' ));
+	add_checkbox( $wp_customize, 'post', __('Show date on archives' ));
+	add_checkbox( $wp_customize, 'post', __('Show author on archives' ));
+	add_checkbox( $wp_customize, 'post', __('Show author box on single' ));
+	add_checkbox( $wp_customize, 'post', __('Show featured image on single' ));
 }
 
 function add_checkbox( $wp_customize, $post_type, $label ) {
@@ -40,7 +40,7 @@ function add_checkbox( $wp_customize, $post_type, $label ) {
 	) );
 
 	$wp_customize->add_control( $settingId . '-control', array(
-		'label'    => __( $label ),
+		'label'    => $label ,
 		'type'     => 'checkbox',
 		'section'  => $post_type . '-section',
 		'settings' => $settingId,
