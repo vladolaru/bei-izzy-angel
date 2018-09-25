@@ -22,15 +22,11 @@
 ?>
 </div>
 
-<div id="footer-widget1">
 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-1') ) : ?>
 <?php endif; ?>
-</div>
 
-<div id="footer-widget2">
 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-2') ) : ?>
 <?php endif; ?>
-</div>
 
 
 <?php wp_footer(); ?>

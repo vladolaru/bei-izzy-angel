@@ -177,24 +177,15 @@ get_post_type_object('Post');
 require get_template_directory() . '/components/custom-footer.php';
 
 /**
- * Limit the excerpt length.
- *
- * @param int $limit
- *
- * @return string
+ * Load the 3 widget areas for the front-page.
  */
-function limited_excerpt($limit) {
-	$content = get_the_excerpt();
-    return wp_trim_words( $content , $limit );
-}
+require get_template_directory() . '/components/front-page-sidebars.php';
 
-function the_post_categories_as_anchor() {
-	$categories = get_the_category();
-	echo "<br> Categories: ";
-	foreach ($categories as $category){
-		echo "<a href=\"" . site_url() . "/category/" . $category->slug . "\">$category->name</a>";
-	}
-}
+
+/**
+ * Load some extra functions for the theme.
+ */
+require get_template_directory() . '/theme-options/extra-functions.php';
 
 /**
  * Load the Theme Options

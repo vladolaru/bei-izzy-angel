@@ -983,9 +983,6 @@ object {
 	display: block;
 }
 
-#footer-widgets div {
-	float: left;
-}
 .main-content {
 	width:60%;
 	float:left;
@@ -1153,3 +1150,28 @@ a.author-link.t {
 a.author-link.w {
     background: #e64522;
 }
+#footer-widgets div {
+    width: 33%;
+}
+#footer-widget1, #footer-menu {
+    float: left;
+}
+
+#footer-widget2 {
+    float: right;
+}
+
+#front-page-widget-2 {
+    width: 75%;
+    float: left;
+}
+
+#front-page-widget-3 {
+    width: 25%;
+    float: right;
+}
+#front-widgets div {
+    align-content: center;
+    text-align: center;
+}
+
