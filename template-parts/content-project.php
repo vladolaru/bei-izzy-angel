@@ -33,7 +33,7 @@
         </div>
 	<?php }
 
-	echo "<br>Description: " . limited_excerpt( 25 ); ?>
+	the_excerpt(); ?>
 
     <div class="entry-content">
 		<?php if ( get_theme_mod( 'project-show-customer-on-archives' ) ) { ?>

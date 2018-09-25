@@ -6,10 +6,18 @@
  *
  * @return string
  */
-function limited_excerpt($limit) {
-	$content = get_the_excerpt();
-	return wp_trim_words( $content , $limit );
+function custom_excerpt_length( $length ) {
+	switch ( get_post_type() ) {
+		case "post":
+			return 50;
+		case "project":
+			return 25;
+		default:
+			return $length;
+	}
 }
+
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999);
 
 function the_post_categories_as_anchor() {
 	$categories = get_the_category();

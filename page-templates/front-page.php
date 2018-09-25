@@ -1,5 +1,7 @@
 <?php
-
+/*
+ * Template Name: 3 Widget Areas
+ */
 get_header();
 ?>
 

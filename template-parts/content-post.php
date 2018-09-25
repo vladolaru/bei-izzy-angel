@@ -35,7 +35,7 @@
 			?>
         </div>
 		<?php
-		echo "<br>Description: " . limited_excerpt(50);
+		the_excerpt();
 
 		if(get_theme_mod('post-show-author-on-archives')) {
 		    echo "<br><br>By: " . get_the_author();

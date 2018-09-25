@@ -181,6 +181,10 @@ require get_template_directory() . '/components/custom-footer.php';
  */
 require get_template_directory() . '/components/front-page-sidebars.php';
 
+/**
+ * Load the 3 widget areas for the front-page.
+ */
+require get_template_directory() . '/components/custom-widgets.php';
 
 /**
  * Load some extra functions for the theme.
