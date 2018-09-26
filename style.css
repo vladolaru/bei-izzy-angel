@@ -1162,16 +1162,18 @@ a.author-link.w {
 }
 
 #front-widget-area-2 li{
-    width: 75%;
+    width: 70%;
     float: left;
 }
 
 #front-widget-area-3 li{
-    width: 25%;
+    width: 30%;
     float: right;
 }
 #front-widgets ul {
     align-content: center;
     text-align: center;
+    list-style: none;
+    padding-left: 0;
 }
 

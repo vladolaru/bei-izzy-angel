@@ -14,7 +14,7 @@
     </header><!-- .entry-header -->
 	<?php
 	the_post_thumbnail( 'medium', [ 'class' => 'project-archive-thumbnail' ] );
-	the_title( '<h2 class="entry-title" style="clear : none"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+	the_title( '<h2 class="entry-title" style="clear : none"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>');
 	?>
 	<?php if ( get_theme_mod( 'project-show-categories-on-archives' ) ) { ?>
         <div class="project-categories">
@@ -26,7 +26,7 @@
 				echo 'Categories: ';
 				foreach ( $post_categories as $c ) {
 					$cat = get_category( $c );
-					echo "<a href=\"" . site_url() . '/' . $taxonomy . '/' . $cat->slug . "\">$cat->name</a>";
+					echo "<a href=\"" . site_url() . '/' . $taxonomy . '/' . $cat->slug . "\">" . esc_html__($cat->name) ."</a>";
 				}
 			}
 			?>
