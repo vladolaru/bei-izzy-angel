@@ -1161,16 +1161,16 @@ a.author-link.w {
     float: right;
 }
 
-#front-page-widget-2 {
+#front-widget-area-2 li{
     width: 75%;
     float: left;
 }
 
-#front-page-widget-3 {
+#front-widget-area-3 li{
     width: 25%;
     float: right;
 }
-#front-widgets div {
+#front-widgets ul {
     align-content: center;
     text-align: center;
 }
