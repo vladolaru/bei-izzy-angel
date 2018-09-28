@@ -14,8 +14,13 @@
     </header><!-- .entry-header -->
 	<?php
 	the_post_thumbnail( 'medium', [ 'class' => 'project-archive-thumbnail' ] );
-	the_title( '<h2 class="entry-title" style="clear : none"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>');
+	//the_title( '<h2 class="entry-title" style="clear : none"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>');
 	?>
+    <h2 class="entry-title" style="clear : none">
+        <a href=" <?php echo esc_url( get_permalink() ) ?> " rel="bookmark">
+            <?php echo __(strip_tags( get_the_title() )); ?>
+        </a>
+    </h2>
 	<?php if ( get_theme_mod( 'project-show-categories-on-archives' ) ) { ?>
         <div class="project-categories">
 			<?php
@@ -26,7 +31,7 @@
 				echo 'Categories: ';
 				foreach ( $post_categories as $c ) {
 					$cat = get_category( $c );
-					echo "<a href=\"" . site_url() . '/' . $taxonomy . '/' . $cat->slug . "\">" . esc_html__($cat->name) ."</a>";
+					echo "<a href=\"" . site_url() . '/' . $taxonomy . '/' . $cat->slug . "\">" . __(strip_tags( $cat->name )) . "</a>";
 				}
 			}
 			?>
@@ -39,7 +44,9 @@
 		<?php if ( get_theme_mod( 'project-show-customer-on-archives' ) ) { ?>
             <div class="customer">
 				<?php echo 'Customer: ';
-				the_field( 'name' ); ?>
+				//the_field( 'name' );
+				echo __(strip_tags( get_field( 'name' ) ) );
+				?>
             </div>
 		<?php } ?>
 

@@ -17,12 +17,12 @@ function custom_excerpt_length( $length ) {
 	}
 }
 
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999);
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 function the_post_categories_as_anchor() {
 	$categories = get_the_category();
 	echo "<br> Categories: ";
-	foreach ($categories as $category){
-		echo "<a href=\"" . site_url() . "/category/" . $category->slug . "\">" . esc_html__($category->name) . "</a>";
+	foreach ( $categories as $category ) {
+		echo "<a href=\"" . site_url() . "/category/" . $category->slug . "\">" . __( strip_tags( $category->name ) ) . "</a>";
 	}
 }

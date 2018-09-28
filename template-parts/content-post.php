@@ -18,8 +18,13 @@
 		if (get_theme_mod('post-show-featured-image-on-archives')) {
 			the_post_thumbnail( 'medium', ['class' => 'post-archive-thumbnail'] );
 		}
-		the_title( '<h2 class="entry-title" style="clear : none"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		//the_title( '<h2 class="entry-title" style="clear : none"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		?>
+        <h2 class="entry-title" style="clear : none">
+            <a href=" <?php echo esc_url( get_permalink() ) ?> " rel="bookmark">
+				<?php echo __(strip_tags( get_the_title() ) ); ?>
+            </a>
+        </h2>
         <div class="post-categories">
 			<?php
 			if(get_theme_mod('post-show-categories-on-archives')) {

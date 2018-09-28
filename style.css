@@ -1162,11 +1162,13 @@ a.author-link.w {
 }
 
 #front-widget-area-2 li{
-    width: 70%;
+    /*order: 1;*/
+    width: 60%;
     float: left;
 }
 
-#front-widget-area-3 li{
+#front-widget-area-3 {
+    /*order: 2;*/
     width: 30%;
     float: right;
 }
@@ -1175,5 +1177,9 @@ a.author-link.w {
     text-align: center;
     list-style: none;
     padding-left: 0;
+    /*display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;*/
 }
 

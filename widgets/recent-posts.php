@@ -88,7 +88,7 @@ class izzy_Widget_Latest_Posts extends WP_Widget {
 			<?php foreach ( $r->posts as $latest_post ) : ?>
 				<?php
 				$post_title = get_the_title( $latest_post->ID );
-				$title      = ( ! empty( $post_title ) ) ? $post_title : __( '(no title)' );
+				$title      = ( ! empty( $post_title ) ) ? __(strip_tags($post_title)) : __( '(no title)' );
 				?>
 				<li>
 					<a href="<?php the_permalink( $latest_post->ID ); ?>"><?php echo $title ; ?></a>
