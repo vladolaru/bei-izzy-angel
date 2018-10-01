@@ -15,23 +15,23 @@
 
 	<div class="entry-content">
 		<?php
-		if (get_theme_mod('post-show-featured-image-on-archives')) {
+		if (get_theme_mod('post-featured-image-archives')) {
 			the_post_thumbnail( 'medium', ['class' => 'post-archive-thumbnail'] );
 		}
 		//the_title( '<h2 class="entry-title" style="clear : none"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		?>
         <h2 class="entry-title" style="clear : none">
             <a href=" <?php echo esc_url( get_permalink() ) ?> " rel="bookmark">
-				<?php echo __(strip_tags( get_the_title() ) ); ?>
+				<?php echo __(strip_tags( get_the_title() ), 'izzy' ); ?>
             </a>
         </h2>
         <div class="post-categories">
 			<?php
-			if(get_theme_mod('post-show-categories-on-archives')) {
+			if(get_theme_mod('post-categories-archives')) {
 				the_post_categories_as_anchor();
 			}
-			if(get_theme_mod('post-show-date-on-archives')) {
-				if(get_theme_mod('post-show-categories-on-archives')) {
+			if(get_theme_mod('post-date-archives')) {
+				if(get_theme_mod('post-categories-archives')) {
 					echo ' - ' . get_the_date();
 				} else {
 				    echo get_the_date();
@@ -42,7 +42,7 @@
 		<?php
 		the_excerpt();
 
-		if(get_theme_mod('post-show-author-on-archives')) {
+		if(get_theme_mod('post-author-archives')) {
 		    echo "<br><br>By: " . get_the_author();
         }
 		?>

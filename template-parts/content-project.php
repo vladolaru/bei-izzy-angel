@@ -18,10 +18,10 @@
 	?>
     <h2 class="entry-title" style="clear : none">
         <a href=" <?php echo esc_url( get_permalink() ) ?> " rel="bookmark">
-            <?php echo __(strip_tags( get_the_title() )); ?>
+            <?php echo __(strip_tags( get_the_title() ), 'izzy'); ?>
         </a>
     </h2>
-	<?php if ( get_theme_mod( 'project-show-categories-on-archives' ) ) { ?>
+	<?php if ( get_theme_mod( 'project-categories-archives' ) ) { ?>
         <div class="project-categories">
 			<?php
 			$taxonomy        = 'project-category';
@@ -41,16 +41,16 @@
 	the_excerpt(); ?>
 
     <div class="entry-content">
-		<?php if ( get_theme_mod( 'project-show-customer-on-archives' ) ) { ?>
+		<?php if ( get_theme_mod( 'project-customer-archives' ) ) { ?>
             <div class="customer">
 				<?php echo 'Customer: ';
 				//the_field( 'name' );
-				echo __(strip_tags( get_field( 'name' ) ) );
+				echo __(strip_tags( get_field( 'name' ) ), 'izzy' );
 				?>
             </div>
 		<?php } ?>
 
-		<?php if ( get_theme_mod( 'project-show-year-on-archives' ) ) { ?>
+		<?php if ( get_theme_mod( 'project-year-archives' ) ) { ?>
             <div class="period">
 				<?php
 				echo 'from: ';

@@ -6,7 +6,7 @@
  *
  * @return string
  */
-function custom_excerpt_length( $length ) {
+function izzy_custom_excerpt_length( $length ) {
 	switch ( get_post_type() ) {
 		case "post":
 			return 50;
@@ -17,12 +17,12 @@ function custom_excerpt_length( $length ) {
 	}
 }
 
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'izzy_custom_excerpt_length', 20 );
 
 function the_post_categories_as_anchor() {
 	$categories = get_the_category();
 	echo "<br> Categories: ";
 	foreach ( $categories as $category ) {
-		echo "<a href=\"" . site_url() . "/category/" . $category->slug . "\">" . __( strip_tags( $category->name ) ) . "</a>";
+		echo "<a href=\"" . site_url() . "/category/" . $category->slug . "\">" . __( strip_tags( $category->name ), 'izzy' ) . "</a>";
 	}
 }

@@ -21,7 +21,7 @@ get_header();
 					?>
                 </div>
 
-				<?php if ( get_theme_mod( 'post-show-featured-image-on-single' ) ) { ?>
+				<?php if ( get_theme_mod( 'post-featured-image-on-single' ) ) { ?>
                     <div class="single-post-featured-image">
 						<?php the_post_thumbnail( 'full', [ 'class' => 'post-single-thumbnail' ] ); ?>
                     </div>
@@ -30,7 +30,7 @@ get_header();
 				<?php the_content(); ?>
 
 				<?php
-				if ( get_theme_mod( 'post-show-author-box-on-single' ) ) {
+				if ( get_theme_mod( 'post-author-box-single' ) ) {
 					include get_template_directory() . '/components/custom-author-box.php';
 				}
 				?>
