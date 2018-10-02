@@ -115,6 +115,54 @@ function izzy_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar(array(
+		'name' => 'Footer Widget 1',
+		'id'        => 'footer-1',
+		'description' => 'First footer widget area',
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+	));
+
+	register_sidebar(array(
+		'name' => 'Footer Widget 2',
+		'id'        => 'footer-2',
+		'description' => 'Second footer widget area',
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+	));
+
+	register_sidebar(array(
+		'name' => 'Front-Page Widget 1',
+		'id'        => 'front-1',
+		'description' => 'First front-page widget area',
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+	));
+	register_sidebar(array(
+		'name' => 'Front-Page Widget 2',
+		'id'        => 'front-2',
+		'description' => 'Second front-page widget area',
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+	));
+	register_sidebar(array(
+		'name' => 'Front-Page Widget 3',
+		'id'        => 'front-3',
+		'description' => 'Third front-page widget area',
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+	));
 }
 add_action( 'widgets_init', 'izzy_widgets_init' );
 
@@ -126,7 +174,9 @@ function izzy_scripts() {
 
 	wp_enqueue_script( 'izzy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'izzy-slider', get_template_directory_uri() . '/js/slider.js', array(), false, true );
+	if (!is_singular('project')) {
+		wp_enqueue_script( 'izzy-slider', get_template_directory_uri() . '/js/slider.js', array(), false, true );
+	}
 
 	wp_enqueue_script( 'izzy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -168,18 +218,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Load the custom post types.
  */
 require get_template_directory() . '/components/custom-post-types.php';
-
-get_post_type_object('Post');
-
-/**
- * Load the 3 column for the footer.
- */
-require get_template_directory() . '/components/custom-footer.php';
-
-/**
- * Load the 3 widget areas for the front-page.
- */
-require get_template_directory() . '/components/front-page-sidebars.php';
 
 /**
  * Load the 3 widget areas for the front-page.

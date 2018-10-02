@@ -17,7 +17,7 @@ function izzy_theme_options_panel_register( $wp_customize ) {
 
 	$wp_customize->add_section( 'project-section', array(
 		'title'    => __('Project Options', 'izzy'),
-		'priority' => 20,
+		'priority' => 10,
 		'panel'    => 'theme-options',
 	) );
 
@@ -36,10 +36,10 @@ function izzy_theme_options_panel_register( $wp_customize ) {
 function add_checkbox_to_theme_options_panel( $wp_customize, $post_type, $label, $id ) {
 	$settingId = $post_type . '-' . $id;
 	$wp_customize->add_setting( $settingId, array(
-		'default' => get_theme_mod( $settingId ),
+		'default' => null,
 	) );
 
-	$wp_customize->add_control( $settingId . '-control', array(
+	$wp_customize->add_control( $settingId , array(
 		'label'    => $label ,
 		'type'     => 'checkbox',
 		'section'  => $post_type . '-section',

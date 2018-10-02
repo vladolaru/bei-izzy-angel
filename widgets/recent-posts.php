@@ -23,8 +23,8 @@ class izzy_Widget_Latest_Posts extends WP_Widget {
 	 */
 	public function __construct() {
 		$widget_ops = array(
-			'classname' => 'widget_latest_entries',
-			'description' => __( 'Your site&#8217;s most latest Posts.', 'izzy' ),
+			'classname'                   => 'widget_latest_entries',
+			'description'                 => __( 'Your site&#8217;s most latest Posts.', 'izzy' ),
 			'customize_selective_refresh' => true,
 		);
 		parent::__construct( 'latest-posts', __( 'Latest Posts', 'izzy' ), $widget_ops );
@@ -36,7 +36,7 @@ class izzy_Widget_Latest_Posts extends WP_Widget {
 	 *
 	 * @since 2.8.0
 	 *
-	 * @param array $args     Display arguments including 'before_title', 'after_title',
+	 * @param array $args Display arguments including 'before_title', 'after_title',
 	 *                        'before_widget', and 'after_widget'.
 	 * @param array $instance Settings for the current Latest Posts widget instance.
 	 */
@@ -64,7 +64,7 @@ class izzy_Widget_Latest_Posts extends WP_Widget {
 		 *
 		 * @see WP_Query::get_posts()
 		 *
-		 * @param array $args     An array of arguments used to retrieve the latest posts.
+		 * @param array $args An array of arguments used to retrieve the latest posts.
 		 * @param array $instance Array of settings for the current widget.
 		 */
 		$r = new WP_Query( apply_filters( 'widget_posts_args', array(
@@ -84,20 +84,20 @@ class izzy_Widget_Latest_Posts extends WP_Widget {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
 		?>
-		<ul>
+        <ul>
 			<?php foreach ( $r->posts as $latest_post ) : ?>
 				<?php
 				$post_title = get_the_title( $latest_post->ID );
-				$title      = ( ! empty( $post_title ) ) ? __(strip_tags($post_title), 'izzy') : __( '(no title)', 'izzy' );
+				$title      = ( ! empty( $post_title ) ) ? strip_tags( $post_title ) : __( '(no title)', 'izzy' );
 				?>
-				<li>
-					<a href="<?php the_permalink( $latest_post->ID ); ?>"><?php echo $title ; ?></a>
+                <li>
+                    <a href="<?php the_permalink( $latest_post->ID ); ?>"><?php echo $title; ?></a>
 					<?php if ( $show_date ) : ?>
-						<span class="post-date"><?php echo get_the_date( '', $latest_post->ID ); ?></span>
+                        <span class="post-date"><?php echo esc_html( get_the_date( '', $latest_post->ID ) ); ?></span>
 					<?php endif; ?>
-				</li>
+                </li>
 			<?php endforeach; ?>
-		</ul>
+        </ul>
 		<?php
 		echo $args['after_widget'];
 	}
@@ -110,13 +110,15 @@ class izzy_Widget_Latest_Posts extends WP_Widget {
 	 * @param array $new_instance New settings for this instance as input by the user via
 	 *                            WP_Widget::form().
 	 * @param array $old_instance Old settings for this instance.
+	 *
 	 * @return array Updated settings to save.
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance = $old_instance;
-		$instance['title'] = sanitize_text_field( $new_instance['title'] );
-		$instance['number'] = (int) $new_instance['number'];
+		$instance              = $old_instance;
+		$instance['title']     = sanitize_text_field( $new_instance['title'] );
+		$instance['number']    = (int) $new_instance['number'];
 		$instance['show_date'] = isset( $new_instance['show_date'] ) ? (bool) $new_instance['show_date'] : false;
+
 		return $instance;
 	}
 
@@ -132,16 +134,27 @@ class izzy_Widget_Latest_Posts extends WP_Widget {
 		$number    = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
 		$show_date = isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : false;
 		?>
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'izzy' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
+        <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'izzy' ); ?></label>
+            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
+                   name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
+                   value="<?php echo esc_attr( $title ); ?>"/></p>
 
-		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:', 'izzy' ); ?></label>
-			<input class="tiny-text" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="number" step="1" min="1" value="<?php echo $number; ?>" size="3" /></p>
+        <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php _e( 'Number of posts to show:', 'izzy' ); ?></label>
+            <input class="tiny-text" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"
+                   name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" step="1" min="1"
+                   value="<?php echo esc_attr( $number ); ?>" size="3"/></p>
 
-		<p><input class="checkbox" type="checkbox"<?php checked( $show_date ); ?> id="<?php echo $this->get_field_id( 'show_date' ); ?>" name="<?php echo $this->get_field_name( 'show_date' ); ?>" />
-			<label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display post date?', 'izzy' ); ?></label></p>
+        <p><input class="checkbox" type="checkbox"<?php checked( $show_date ); ?>
+                  id="<?php echo esc_attr( $this->get_field_id( 'show_date' ) ); ?>"
+                  name="<?php echo esc_attr( $this->get_field_name( 'show_date' ) ); ?>"/>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'show_date' ) ); ?>"><?php _e( 'Display post date?', 'izzy' ); ?></label>
+        </p>
 		<?php
 	}
 }
 
-add_action( 'widgets_init', function(){register_widget( 'izzy_Widget_Latest_Posts' );});
+add_action( 'widgets_init', function () {
+	register_widget( 'izzy_Widget_Latest_Posts' );
+} );

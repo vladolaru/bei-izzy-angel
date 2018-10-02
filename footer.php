@@ -13,23 +13,22 @@
 
 <div id="footer-widgets">
 
-<div id="footer-menu">
-<?php
-	wp_nav_menu( array(
-				'theme_location' => 'menu-3',
-				'menu_id'        => 'footer-menu',
-				) );
-?>
+    <div id="footer-menu">
+		<?php
+		wp_nav_menu( array(
+			'theme_location' => 'menu-3',
+			'menu_id'        => 'footer-menu',
+		) );
+		?>
+    </div>
+    <ul id="footer-widget1">
+		<?php dynamic_sidebar( 'footer-1' ) ?>
+    </ul>
+
+    <ul id="footer-widget2">
+		<?php dynamic_sidebar( 'footer-2' ) ?>
+    </ul>
 </div>
-
-<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-1') ) : ?>
-<?php endif; ?>
-
-<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-2') ) : ?>
-<?php endif; ?>
-
-
 <?php wp_footer(); ?>
-</div>
 </body>
 </html>

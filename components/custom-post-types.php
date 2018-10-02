@@ -55,7 +55,7 @@ function izzy_project_type() {
 
 }
 
-add_action( 'init', 'izzy_project_type', 0 );
+add_action( 'init', 'izzy_project_type', 10 );
 
 function izzy_project_taxonomy() {
 	$labels = array(
@@ -84,4 +84,4 @@ function izzy_project_taxonomy() {
 	register_taxonomy( 'project-category', 'project', $args );
 }
 
-add_action( 'init', 'izzy_project_taxonomy', 0 );
+add_action( 'init', 'izzy_project_taxonomy', 10 );

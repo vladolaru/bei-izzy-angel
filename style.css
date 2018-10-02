@@ -1150,9 +1150,14 @@ a.author-link.t {
 a.author-link.w {
     background: #e64522;
 }
-#footer-widgets div {
+#footer-menu {
     width: 33%;
 }
+
+#footer-widgets ul {
+	width: 33%;
+}
+
 #footer-widget1, #footer-menu {
     float: left;
 }
